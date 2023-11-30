@@ -1,5 +1,5 @@
 /** @type {import('./$types').PageLoad} */
-export async function load() {
+export async function load({fetch}) {
 
     const weekday = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"];
 

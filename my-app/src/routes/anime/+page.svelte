@@ -23,6 +23,7 @@
                 </span>
                 <span class="font-semibold absolute bottom-1 right-1">Eps. {anime.episodes}</span>
             </a>
+            <h3 class="font-sans font-semibold text-indigo-500">{anime.title}</h3>
         </div>
     {/each}
 </div>
