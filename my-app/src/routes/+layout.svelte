@@ -36,7 +36,7 @@
         "/>
         Search
   </BottomNavItem>
-  <BottomNavItem href="/setting">
+  <BottomNavItem href="/settings">
         <SettingsIcon class="mb-1"/>
         Settings
   </BottomNavItem>
