@@ -1,5 +1,7 @@
 <script>
-	
+    import AnimeCards from "$lib/components/AnimeCards.svelte";
+
+	export let data;
 </script>
 
 <svelte:head>
@@ -7,7 +9,7 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-
+<AnimeCards info={data}/>
 
 
 
