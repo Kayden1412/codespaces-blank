@@ -12,7 +12,7 @@
 
 <div class="hover:scale-[105%]">
     <a href="/anime/{id}" class="relative text-sm" >
-        <img loading="lazy" src={coverImg.webp.image_url} alt="{title} Cover" class="">
+        <img loading="lazy" decoding="async" src={coverImg.webp.image_url} alt="{title} Cover" class="">
         <span class="absolute top-2 left-2 text-white font-semibold capital bg-blue-500 px-2 rounded-sm">
             {type}
         </span>
