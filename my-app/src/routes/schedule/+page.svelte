@@ -1,17 +1,14 @@
 <script>
-  export let data;
+    import AnimeCards from "$lib/components/AnimeCards.svelte";
+    export let data;
 </script>
 
-<h2>Schedule</h2>
+<svelte:head>
+    <title>Schedule</title>
+</svelte:head>
 
-<div class="grid grid-cols-2 gap-4">
-    {#each data.data as anime}
-        <div>
-            <a href="anime/{anime.mal_id}">
-            <img loading="lazy" src={anime.images.webp.image_url}>
-            </a>
-        </div>
-    {/each}
-</div>
+<h2 class="text-center text-2xl text-blue-500 font-bold mb-5">Schedule</h2>
+
+<AnimeCards info={data}/>
 
 <style></style>

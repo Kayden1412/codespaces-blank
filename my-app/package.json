@@ -18,6 +18,8 @@
     "autoprefixer": "^10.4.14",
     "eslint": "^8.28.0",
     "eslint-plugin-svelte": "^2.30.0",
+    "flowbite": "^2.2.0",
+    "flowbite-svelte": "^0.44.20",
     "postcss": "^8.4.24",
     "postcss-load-config": "^4.0.1",
     "svelte": "^4.2.7",

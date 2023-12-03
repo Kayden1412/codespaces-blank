@@ -2,61 +2,50 @@
    
   import { page } from '$app/stores'
 
-  import Icon from '$lib/components/Icon.svelte';
+  import { BottomNav, BottomNavItem } from 'flowbite-svelte'
 
   import "../app.pcss";
 
   import "./styles.css";
+  import { CalendarClock, Home, Search, SettingsIcon } from 'lucide-svelte';
   
 
-  const links = [ 
-    {
-      label: 'Home', 
-      url: '/' , 
-      icon: 'Home'
-    },
-    {
-      label: 'Anime', 
-      url: '/anime', 
-      icon: 'Tv'
-    }, 
-    {
-      label: 'Schedule', 
-      url: '/schedule', 
-      icon: 'CalendarClock'
-    }
-  ]
   
+  $: activeUrl = $page.url.pathname
 
 </script>
 
 <div class="app">
-  <main>
+  <main class="bg-slate-600">
     <slot />
   </main>
   
-  <br><br><br>
 
-  <p class="text-center">©2023</p>
-   <div class="w-[100%] fixed bottom-0 p-4 flex justify-between bg-indigo-500">
-    {#each links as link} 
-        <a href={link.url} class:active={$page.url.pathname === link.url} class="font-sans text-md flex flex-col items-center">
-        
-          <Icon name="{link.icon}" color="whitesmoke" size="28" />
-          <span>{link.label}</span>
-        </a>     
-    {/each}
-   </div>
+
+<BottomNav {activeUrl} position="fixed" classInner="grid-cols-4 p-2 text-white bg-primary-600 hover:bg-primary-600" activeClass="text-indigo-700 hover:text-indigo-600 hover:bg-white">
+    <BottomNavItem href="/">   
+        <Home class="mb-1"/>
+        Home
+    </BottomNavItem>
+    <BottomNavItem href="/schedule">
+        <CalendarClock class="mb-1"/>
+        Schedule
+    </BottomNavItem>
+  <BottomNavItem href="/search">
+        <Search class="mb-1 
+        "/>
+        Search
+  </BottomNavItem>
+  <BottomNavItem href="/setting">
+        <SettingsIcon class="mb-1"/>
+        Settings
+  </BottomNavItem>
+</BottomNav>
+
 </div>
-
-
-
 
 <style>
 
-  .active {
-    color: whitesmoke;
-  }
 
   .app {
     display: flex;
