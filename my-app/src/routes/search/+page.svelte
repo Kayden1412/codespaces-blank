@@ -16,7 +16,7 @@
     <title>Search</title>
 </svelte:head>
 
-<form method="post" class="m-5" use:enhance>
+<form method="post" action="?/search" class="m-5" use:enhance>
     <Label for="search" class="block mb-2">Search</Label>
     <Input name="search" placeholder="Search" size="lg" class="mb-2"></Input>
 
@@ -29,6 +29,12 @@
 
 <h4 class="text-center text-white">Page ke {currentPage} dari {totalPage}</h4>
 <div class="flex items-center justify-center gap-2 mb-16 mt-2">
-    <Button disabled={Number(currentPage) === 1}>Previous</Button>
-    <Button disabled={Number(currentPage) === Number(totalPage)}>Next</Button>
+    <form method="post" action="?/previous" use:enhance>
+        <input type="hidden" name="page" value={Number(currentPage)}/>
+        <Button type="submit" disabled={Number(currentPage) === 1}>Previous</Button>
+    </form>
+    <form method="post" action="?/next" use:enhance>
+        <input type="hidden" name="page" value={Number(currentPage)}/>
+        <Button type="submit" disabled={Number(currentPage) === Number(totalPage)}>Next</Button>
+    </form>
 </div>
