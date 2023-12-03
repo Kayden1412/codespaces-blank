@@ -30,6 +30,7 @@
   },
   "type": "module",
   "dependencies": {
+    "better-svelte-writable": "^0.4.2",
     "lucide-svelte": "^0.294.0"
   }
 }
