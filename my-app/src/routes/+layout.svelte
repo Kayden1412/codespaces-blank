@@ -15,6 +15,7 @@
 
 </script>
 
+
 <div class="app">
   <main class="bg-slate-600">
     <slot />

@@ -20,7 +20,7 @@
     <Label for="search" class="block mb-2">Search</Label>
     <Input name="search" placeholder="Search" size="lg" class="mb-2"></Input>
 
-    <Button size="lg" type="submit" disabled={$query?.length === 0} class="w-full">Search</Button>
+    <Button size="lg" type="submit" disabled={query?.length === 0} class="w-full">Search</Button>
 </form>
 
 <h3 class="text-center text-xl mb-5">{data.data.length} results for {query}</h3>
