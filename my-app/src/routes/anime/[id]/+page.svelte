@@ -21,11 +21,9 @@
     </span>
 
     <span class="capitalize">{data.season} {data.year}</span>
-    <ul>
-        {#each data.genres as e }
-            <li>{e.name}</li>
-        {/each}
-    </ul>
+    
+    <span class="">#{data.rank}</span>
+
     <p class="text-semibold text-white">{data.synopsis}</p>
 </div>
 

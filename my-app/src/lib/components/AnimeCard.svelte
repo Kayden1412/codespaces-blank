@@ -7,11 +7,15 @@
     export let score = "8.97";
     export let episodes = 12;
     export let id = 1;
-    export let coverImg = {};
+    export let coverImg = {
+        webp : {
+            image_url: 't'
+        }
+    };
 </script>
 
 <div class="hover:scale-[105%]">
-    <a href="/anime/{id}" class="relative text-sm" width=225 height=318>
+    <a href="/anime/{id}" class="relative text-sm" width={225} height=318>
         <img loading="lazy" decoding="async" src={coverImg.webp.image_url} alt="{title} Cover" class="">
         <span class="absolute top-2 left-2 text-white font-semibold capital bg-blue-500 px-2 rounded-sm">
             {type}

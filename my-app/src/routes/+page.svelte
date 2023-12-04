@@ -1,5 +1,8 @@
 <script>
     import AnimeCards from "$lib/components/AnimeCards.svelte";
+    import Pagination from "$lib/components/Pagination.svelte";
+    
+    import { page } from "$app/stores";
 
 	export let data;
 </script>
@@ -11,7 +14,7 @@
 
 <AnimeCards info={data}/>
 
-
+<Pagination currentPage={$page.url.searchParams.get('page') ?? 1} totalPages={data.pagination.last_visible_page}/>
 
 <style>
 	
