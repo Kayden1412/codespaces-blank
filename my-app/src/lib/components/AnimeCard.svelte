@@ -1,5 +1,7 @@
 <script>
     import { Star } from "lucide-svelte";
+    import { enhancedImages } from "@sveltejs/enhanced-img";
+
 
     export let title = "test";
     export let type = "TV";
@@ -15,8 +17,8 @@
 </script>
 
 <div class="hover:scale-[105%]">
-    <a href="/anime/{id}" class="relative text-sm" width={225} height=318>
-        <img loading="lazy" decoding="async" src={coverImg.webp.image_url} alt="{title} Cover" class="">
+    <a href="/anime/{id}" class="relative text-sm">
+        <enhanched:img lazy="loaded" decoding="async" src={coverImg.webp.image_url} alt="{title} Cover" class="object-cover transition duration-300 opacity-300">
         <span class="absolute top-2 left-2 text-white font-semibold capital bg-blue-500 px-2 rounded-sm">
             {type}
         </span>
