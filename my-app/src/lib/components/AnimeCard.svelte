@@ -17,7 +17,7 @@
 
 <div>
     <a href="/anime/{id}" class="relative text-sm">
-        <enhanched:img decoding="async" src={coverImg.webp.image_url} alt="{title} Cover" class="object-cover w-full h-full transition duration-300 opacity-100">
+        <enhanced:img decoding="async" src={coverImg.webp.image_url} alt="{title} Cover" class="object-cover w-full h-full transition duration-300 opacity-100">
         <span class="absolute top-2 left-2 text-white font-semibold capital bg-blue-500 px-2 rounded-sm">
             {type}
         </span>
