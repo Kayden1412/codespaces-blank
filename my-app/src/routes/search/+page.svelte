@@ -1,11 +1,10 @@
 <script>
     export let data;
     import { Input, Button, Label, Pagination } from "flowbite-svelte";
-    import { goto } from "$app/navigation";
     import { page } from "$app/stores";
     import { enhance } from "$app/forms";
     import AnimeCards from "$lib/components/AnimeCards.svelte";
-    import { ArrowLeft, ArrowRight } from "lucide-svelte";
+    import Heading from "$lib/components/Heading.svelte";
 
     $: query = $page.url.searchParams.get("q");
     $: currentPage = $page.url.searchParams.get("page") ?? 1
@@ -16,14 +15,19 @@
     <title>Search</title>
 </svelte:head>
 
-<form method="post" action="?/search" class="m-5" use:enhance>
-    <Label for="search" class="block mb-2">Search</Label>
+<Heading title="Search" />
+
+<form method="post" action="?/search" class="mb-5" use:enhance>
+    <Label for="search"></Label>
     <Input name="search" placeholder="Search" size="lg" class="mb-2"></Input>
 
     <Button size="lg" type="submit" disabled={query?.length === 0} class="w-full">Search</Button>
 </form>
 
-<h3 class="text-center text-xl mb-5">{data.data.length} results for {query}</h3>
+{#if query && query?.length > 0}
+    
+<h3 class="text-center text-white font-semibold text-xl mb-5">{data.data.length} results for {query}</h3>
+{/if}
 
 <AnimeCards info={data} />
 

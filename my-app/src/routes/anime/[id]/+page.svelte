@@ -10,8 +10,8 @@
 </svelte:head>
 
 
-<div class="flex flex-col gap-4 items-center">
-    <img loading="lazy" alt="{data.title} Cover" class="hover:blur-xl" src={data.images.webp.image_url} width="175">
+<div class="flex flex-col gap-4 items-center text-white">
+    <img loading="lazy" alt="{data.title} Cover" class="" src={data.images.webp.image_url} width="175">
     <h2 class="font-sans font-bold text-lg text-indigo-500">{data.title}</h2>
     
     <span class="flex gap-1 text-white">
@@ -22,9 +22,11 @@
 
     <span class="capitalize">{data.season} {data.year}</span>
     
-    <span class="">#{data.rank}</span>
+    <span class="text-white text-left">Synopsis</span>
 
-    <p class="text-semibold text-white">{data.synopsis}</p>
+    <p class="text-semibold text-white text-lg">
+        {data.synopsis}
+    </p>
 </div>
 
 <br><br>

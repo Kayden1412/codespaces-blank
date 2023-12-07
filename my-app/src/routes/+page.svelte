@@ -3,6 +3,7 @@
     import Pagination from "$lib/components/Pagination.svelte";
     
     import { page } from "$app/stores";
+    import Heading from "$lib/components/Heading.svelte";
 
 	export let data;
 </script>
@@ -11,6 +12,8 @@
 	<title>Home</title>
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
+
+<Heading title="Home"/>
 
 <AnimeCards info={data}/>
 

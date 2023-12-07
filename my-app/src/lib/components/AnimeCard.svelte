@@ -17,7 +17,7 @@
 
 <div>
     <a href="/anime/{id}" class="relative text-sm">
-        <img decoding="async" src={coverImg.webp.image_url} alt="{title} Cover" class="transition duration-300 opacity-100">
+        <img decoding="async" src={coverImg.webp.image_url} alt="{title} Cover" class="object-cover transition duration-300 opacity-100">
         <span class="absolute top-2 left-2 text-white font-semibold capital bg-blue-500 px-2 rounded-sm">
             {type}
         </span>
@@ -33,5 +33,7 @@
         </span>
     </a>
 
-    <h3 class="text-white font-bold text-sm line-clamp-2">{title}</h3>
+    <h3 class="text-white font-semibold text-md line-clamp-2 font-sans mt-1">
+        <a href="/anime/{id}">{title}</a>
+    </h3>
 </div>

@@ -17,7 +17,7 @@
 
 
 <div class="app">
-  <main class="bg-slate-600">
+  <main class="bg-slate-800">
     <slot />
   </main>
   
