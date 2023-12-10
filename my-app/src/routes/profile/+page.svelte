@@ -4,4 +4,4 @@
 </script>
 
 
-<img src={$page.session.avatar}>
+<img src={$page.session.user.image} alt="Avatar image">
