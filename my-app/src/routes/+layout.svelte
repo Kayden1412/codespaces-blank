@@ -38,7 +38,7 @@
   </Navbar>
   
 
-  <main class="bg-zinc-200 dark:bg-slate-800">
+  <main class="bg-zinc-100 dark:bg-slate-800">
     <slot />
   </main>
 
