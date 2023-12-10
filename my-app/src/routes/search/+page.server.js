@@ -5,8 +5,9 @@ import { redirect } from '@sveltejs/kit';
 export async function load({url}) {
   const page = url.searchParams.get('page') ?? 1;
   const q = url.searchParams.get('q') ?? '';
+  const genres = url.searchParams.get('genres') ?? ''
 
-  const req = await fetch(`https://api.jikan.moe/v4/anime?q=${q}&page=${page}&sfw`)
+  const req = await fetch(`https://api.jikan.moe/v4/anime?q=${q}&page=${page}&sfw&genres=${genres}`)
   const res = await req.json()
 
   return res

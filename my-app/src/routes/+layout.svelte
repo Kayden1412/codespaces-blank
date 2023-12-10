@@ -6,7 +6,7 @@
   import "../app.pcss";
 
   import "./styles.css";
-  import { CalendarClock, Home, Search, SettingsIcon } from "lucide-svelte";
+  import { CalendarClock, Home, Search, SettingsIcon, Shuffle } from "lucide-svelte";
 
   $: activeUrl = $page.url.pathname;
 </script>
@@ -38,14 +38,14 @@
   </Navbar>
   
 
-  <main class="bg-zinc-100 dark:bg-slate-800">
+  <main class="bg-white dark:bg-slate-800">
     <slot />
   </main>
 
   <BottomNav
     {activeUrl}
     position="fixed"
-    classInner="grid-cols-4 p-2 text-zinc-100 dark:text-zinc-100 bg-primary-600  dark:bg-slate-900"
+    classInner="w-full lg:hidden grid-cols-5 p-2 text-zinc-100 dark:text-zinc-100 bg-primary-600  dark:bg-slate-900"
     activeClass="text-slate-800 dark:text-primary-600 hover:bg-white"
   >
     <BottomNavItem href="/">
@@ -62,6 +62,10 @@
         "
       />
       Search
+    </BottomNavItem>
+    <BottomNavItem href="/random">
+      <Shuffle/>
+      Random
     </BottomNavItem>
     <BottomNavItem href="/settings">
       <SettingsIcon class="mb-1" />

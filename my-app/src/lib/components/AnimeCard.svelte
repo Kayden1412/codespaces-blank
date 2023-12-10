@@ -24,7 +24,7 @@
         decoding="async" 
         src={coverImg.webp.image_url} 
         alt="{title} Cover" 
-        class=" rounded-md transition ease-in-out hover:scale-[102%] duration-300">
+        class="object-cover  rounded-md transition ease-in-out hover:scale-[102%] duration-300">
         <span class="absolute top-2 left-1.5 font-semibold capital bg-blue-500 px-2 rounded-sm">
             {type}
         </span>

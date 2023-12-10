@@ -11,9 +11,7 @@
   },
   "devDependencies": {
     "@fontsource/fira-mono": "^4.5.10",
-    "@neoconfetti/svelte": "^1.0.0",
     "@sveltejs/adapter-auto": "^2.0.0",
-    "@sveltejs/enhanced-img": "^0.1.5",
     "@sveltejs/kit": "^1.27.4",
     "@types/cookie": "^0.5.1",
     "autoprefixer": "^10.4.14",
@@ -31,7 +29,8 @@
   },
   "type": "module",
   "dependencies": {
-    "better-svelte-writable": "^0.4.2",
+    "@auth/core": "^0.18.5",
+    "@auth/sveltekit": "^0.3.16",
     "lucide-svelte": "^0.294.0"
   }
 }

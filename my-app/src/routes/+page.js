@@ -12,6 +12,7 @@ export async function load({url, fetch}) {
     const res = await req.json()
     const data = await rec.json()
 
+
     const rand = getRandomInt(1,192)
     
     return {anime: res, rec: data.data.flatMap(e => e.entry).slice(rand,  rand + 8)}
