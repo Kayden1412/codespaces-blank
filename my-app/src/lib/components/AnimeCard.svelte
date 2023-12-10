@@ -14,11 +14,13 @@
             image_url: 't'
         }
     };
+    export let lazy = false;
 </script>
 
 <div class="font-bold" transition:fade={{duration: 300}}>
     <a href="/anime/{id}" class="relative text-sm text-zinc-200 font-bold">
         <img 
+        loading={lazy ? "lazy" : "eager"}
         decoding="async" 
         src={coverImg.webp.image_url} 
         alt="{title} Cover" 

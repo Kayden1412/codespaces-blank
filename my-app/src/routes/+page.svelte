@@ -26,7 +26,7 @@
 
 <Heading title="Recommendations"/>
 
-<AnimeCards info={data.rec} />
+<AnimeCards info={data.rec} lazy=true/>
 
 
 <Pagination currentPage={$page.url.searchParams.get('page') ?? 1} totalPages={data.anime.pagination.last_visible_page}/>
