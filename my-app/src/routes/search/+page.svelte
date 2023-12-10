@@ -1,10 +1,11 @@
 <script>
     export let data;
-    import { Input, Button, Label, Pagination } from "flowbite-svelte";
+    import { Input, Button, Label } from "flowbite-svelte";
     import { page } from "$app/stores";
     import { enhance } from "$app/forms";
     import AnimeCards from "$lib/components/AnimeCards.svelte";
     import Heading from "$lib/components/Heading.svelte";
+    import Pagination from "$lib/components/Pagination.svelte";
 
     $: query = $page.url.searchParams.get("q");
     $: currentPage = $page.url.searchParams.get("page") ?? 1
@@ -13,6 +14,7 @@
 
 <svelte:head>
     <title>Search</title>
+    <meta name="description" content="Search your favorite anime">
 </svelte:head>
 
 <Heading title="Search" />
@@ -26,19 +28,9 @@
 
 {#if query && query?.length > 0}
     
-<h3 class="text-center text-white font-semibold text-xl mb-5">{data.data.length} results for {query}</h3>
+<h3 class="text-center text-primary-600 dark:text-zinc-100 font-semibold text-xl mb-5">{data.data.length} results for {query}</h3>
 {/if}
 
-<AnimeCards info={data} />
+<AnimeCards info={data.data} />
 
-<h4 class="text-center text-white">Page ke {currentPage} dari {totalPage}</h4>
-<div class="flex items-center justify-center gap-2 mb-16 mt-2">
-    <form method="post" action="?/previous" use:enhance>
-        <input type="hidden" name="page" value={Number(currentPage)}/>
-        <Button type="submit" disabled={Number(currentPage) === 1}>Previous</Button>
-    </form>
-    <form method="post" action="?/next" use:enhance>
-        <input type="hidden" name="page" value={Number(currentPage)}/>
-        <Button type="submit" disabled={Number(currentPage) === Number(totalPage)}>Next</Button>
-    </form>
-</div>
+<Pagination currentPage={$page.url.searchParams.get('page') ?? 1} totalPages={data.pagination.last_visible_page}/>

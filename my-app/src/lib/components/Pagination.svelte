@@ -5,7 +5,12 @@
     import { Button } from "flowbite-svelte";
 </script>
 
-<h4 class="text-center text-white">Page ke {currentPage} dari {totalPages}</h4>
+<h4 class="text-center text-slate-900 dark:text-zinc-100">Page 
+    <span class="text-primary-600">{currentPage}</span>
+    of 
+    <span class="text-primary-600">{totalPages}</span>
+</h4>
+
 <div class="flex items-center justify-center gap-2 mb-16 mt-2">
     <form method="post" action="search?/previous" use:enhance>
         <input type="hidden" name="page" value={currentPage} />

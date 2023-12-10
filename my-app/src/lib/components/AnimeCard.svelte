@@ -1,6 +1,7 @@
 <script>
     import { Star } from "lucide-svelte";
-
+    
+    import { blur, fade } from "svelte/transition";
 
     export let title = "test";
     export let type = "TV";
@@ -15,25 +16,29 @@
     };
 </script>
 
-<div>
-    <a href="/anime/{id}" class="relative text-sm">
-        <img decoding="async" src={coverImg.webp.image_url} alt="{title} Cover" class="object-cover transition duration-300 opacity-100">
-        <span class="absolute top-2 left-2 text-white font-semibold capital bg-blue-500 px-2 rounded-sm">
+<div class="font-bold" transition:fade={{duration: 300}}>
+    <a href="/anime/{id}" class="relative text-sm text-zinc-200 font-bold">
+        <img 
+        decoding="async" 
+        src={coverImg.webp.image_url} 
+        alt="{title} Cover" 
+        class=" rounded-md transition ease-in-out hover:scale-[102%] duration-300">
+        <span class="absolute top-2 left-1.5 font-semibold capital bg-blue-500 px-2 rounded-sm">
             {type}
         </span>
-        <span class="absolute top-2 right-2 text-white font-semibold bg-pink-500 px-2 rounded-sm">
+        <span class="absolute top-2 right-1.5 font-semibold bg-pink-500 px-2 rounded-sm">
             {source}    
         </span>
-        <span class="absolute bottom-2 left-2 text-white font-semibold bg-green-500 px-2 rounded-sm inline-flex items-center gap-1">
-            <Star size=18 color="#fde047" fill="#fde047"/>
+        <span class="absolute text-center bottom-2 left-1.5 font-semibold inline-flex items-center justify-center gap-1">
+            <Star size=17 color="#fde047" fill="#fde047"/>
             {score ?? "N/A"}
         </span>
-        <span class="absolute bottom-2 right-2 text-white font-semibold bg-indigo-500 px-2 rounded-sm">
+        <span class="absolute bottom-2 right-1.5 font-semibold bg-indigo-500 px-2 rounded-sm">
             Eps. {episodes ?? "?"}
         </span>
     </a>
 
-    <h3 class="text-white font-semibold text-md line-clamp-2 font-sans mt-1">
+    <h3 class="text-primary-600 font-bold text-md line-clamp-2 font-sans mt-1.5">
         <a href="/anime/{id}">{title}</a>
     </h3>
 </div>
