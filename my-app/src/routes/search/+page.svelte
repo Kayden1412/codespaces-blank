@@ -34,3 +34,5 @@
 <AnimeCards info={data.data} />
 
 <Pagination currentPage={$page.url.searchParams.get('page') ?? 1} totalPages={data.pagination.last_visible_page}/>
+
+

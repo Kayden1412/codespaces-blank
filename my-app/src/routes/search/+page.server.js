@@ -1,4 +1,5 @@
 // @ts-nocheck
+import anime from '$lib/utils/anime';
 import { redirect } from '@sveltejs/kit';
 
 /** @type {import('./$types').PageLoad} */
@@ -7,10 +8,9 @@ export async function load({url}) {
   const q = url.searchParams.get('q') ?? '';
   const genres = url.searchParams.get('genres') ?? ''
 
-  const req = await fetch(`https://api.jikan.moe/v4/anime?q=${q}&page=${page}&sfw&genres=${genres}`)
-  const res = await req.json()
+  const req = await anime(`anime?q=${q}&page=${page}&limit=24&sfw&genres=${genres}`).json()
 
-  return res
+  return req
 
 }
 
@@ -25,15 +25,15 @@ export const actions = {
     next: async ({request, url}) => {
       const data = await request.formData();
       const page = data.get("page");
-      const query = url.searchParams.get('q') ?? '';
+      const query = data.get('query')
       console.log(query, 1412)
       throw redirect(302, `?${query.length > 0 ? 'q=' + query + '&': ''}page=${Number(page) + 1}`)
     }, 
     previous: async ({request, url}) => {
       const data = await request.formData();
       const page = data.get("page");
-      const query = url.searchParams.get('q') ?? '';
+      const query = data.get('query')
 
-      throw redirect(302, `?q=${url.pathname === '/search' ? query : ''}&page=${Number(page) - 1}`)
+      throw redirect(302, `?${query.length > 0 ? 'q=' + query + '&' : ''}page=${Number(page) - 1}`)
     }
 };
